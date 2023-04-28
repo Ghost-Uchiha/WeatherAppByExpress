@@ -5,7 +5,7 @@ const city_name = document.getElementById('city_name');
 const temp_real_val = document.getElementById('temp_real_val');
 const temp_status = document.getElementById('temp_status');
 const datahide = document.querySelector('.middle_layer');
-
+const API_Key="4f8ed5dfda98301b6c0f0f0ce77b7279";
 const getInfo = async(event) => {
     event.preventDefault();
 
@@ -19,7 +19,7 @@ const getInfo = async(event) => {
         try{
            
 
-            let url = `http://api.openweathermap.org/data/2.5/weather?q=${cityVal}&units=metric&appid=4f8ed5dfda98301b6c0f0f0ce77b7279`
+            let url = `http://api.openweathermap.org/data/2.5/weather?q=${cityVal}&units=metric&appid=${API_Key}`
             const response = await fetch(url);
 
             const data = await response.json();
